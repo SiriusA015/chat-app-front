@@ -1,0 +1,116 @@
+.theme-colors {
+  width: 280px !important;
+  position: fixed;
+  z-index: 1030;
+  top: 50%;
+  right: 0;
+  background: $foreground-color;
+  @include depth(1);
+  transform: translate(280px, -50%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .theme-button {
+    position: absolute;
+    left: -32px;
+    background: $foreground-color;
+    padding: 13px 7px 13px 7px;
+    border-radius: 0.2rem;
+    color: $primary-color;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.04);
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $theme-color-1;
+  }
+
+  .theme-color {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    border-radius: 20px;
+    transition: background 0.25s;
+
+    &.active,
+    &:hover {
+      background: $foreground-color;
+    }
+  }
+
+  .theme-color-purplemonster {
+    border: 3px solid $theme-color-purple-monster;
+    background: $theme-color-purple-monster;
+  }
+
+  .theme-color-blueyale {
+    border: 3px solid $theme-color-blue-yale;
+    background: $theme-color-blue-yale;
+  }
+
+  .theme-color-blueolympic {
+    border: 3px solid $theme-color-blue-olympic;
+    background: $theme-color-blue-olympic;
+  }
+
+  .theme-color-bluenavy {
+    border: 3px solid $theme-color-blue-navy;
+    background: $theme-color-blue-navy;
+  }
+
+  .theme-color-orangecarrot {
+    border: 3px solid $theme-color-orange-carrot;
+    background: $theme-color-orange-carrot;
+  }
+
+  .theme-color-greenmoss {
+    border: 3px solid $theme-color-green-moss;
+    background: $theme-color-green-moss;
+  }
+
+  .theme-color-greenlime {
+    border: 3px solid $theme-color-green-lime;
+    background: $theme-color-green-lime;
+  }
+
+  .theme-color-redruby {
+    border: 3px solid $theme-color-red-ruby;
+    background: $theme-color-red-ruby;
+  }
+
+  .theme-color-greysteel {
+    border: 3px solid $theme-color-grey-steel;
+    background: $theme-color-grey-steel;
+  }
+
+  .theme-color-yellowgranola {
+    border: 3px solid $theme-color-yellow-granola;
+    background: $theme-color-yellow-granola;
+  }
+
+  &.shown {
+    transform: translate(0, calc(-50% + 0.5px));
+    transition: transform 0.4s ease-out;
+  }
+
+  &.hidden {
+    transform: translate(280px, -50%);
+    transition: transform 0.4s ease-out;
+  }
+}
+
+.rtl {
+  .theme-colors {
+    transform: translate(-280px, -50%);
+    left: 0;
+    right: initial;
+
+    .theme-button {
+      left: 278px;
+      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.04);
+    }
+
+    &.shown {
+      transform: translate(0, -50%);
+    }
+  }
+}

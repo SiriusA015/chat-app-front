@@ -1,0 +1,267 @@
+.notification {
+  border-radius: $border-radius;
+  @include depth(1);
+  padding: 25px 25px 25px 25px;
+}
+
+.notification:before {
+  content: '';
+  display: none;
+}
+
+.notification-primary {
+  color: $theme-color-1;
+  background-color: $foreground-color;
+  border: 1px solid $theme-color-1;
+  opacity: 1;
+
+  .notification-message {
+    .title {
+      color: $theme-color-1;
+    }
+
+    .message {
+      color: $primary-color;
+    }
+  }
+
+  &.filled {
+    color: $foreground-color;
+    background-color: $theme-color-1;
+
+    .notification-message {
+      .title {
+        color: $foreground-color;
+      }
+
+      .message {
+        color: $foreground-color;
+      }
+    }
+  }
+}
+
+.notification-secondary {
+  color: $theme-color-2;
+  background-color: $foreground-color;
+  border: 1px solid $theme-color-2;
+  opacity: 1;
+
+  .notification-message {
+    .title {
+      color: $theme-color-2;
+    }
+
+    .message {
+      color: $secondary-color;
+    }
+  }
+
+  &.filled {
+    color: $foreground-color;
+    background-color: $theme-color-2;
+
+    .notification-message {
+      .title {
+        color: $foreground-color;
+      }
+
+      .message {
+        color: $foreground-color;
+      }
+    }
+  }
+}
+
+.notification-info {
+  color: $info-color;
+  background-color: $foreground-color;
+  border: 1px solid $info-color;
+  opacity: 1;
+
+  .notification-message {
+    .title {
+      color: $info-color;
+    }
+
+    .message {
+      color: $secondary-color;
+    }
+  }
+
+  &.filled {
+    color: $foreground-color;
+    background-color: $info-color;
+
+    .notification-message {
+      .title {
+        color: $foreground-color;
+      }
+
+      .message {
+        color: $foreground-color;
+      }
+    }
+  }
+}
+
+.notification-success {
+  color: $success-color;
+  background-color: $foreground-color;
+  border: 1px solid $success-color;
+  opacity: 1;
+
+  .notification-message {
+    .title {
+      color: $success-color;
+    }
+
+    .message {
+      color: $secondary-color;
+    }
+  }
+
+  &.filled {
+    color: $foreground-color;
+    background-color: $success-color;
+
+    .notification-message {
+      .title {
+        color: $foreground-color;
+      }
+
+      .message {
+        color: $foreground-color;
+      }
+    }
+  }
+}
+
+.notification-warning {
+  color: $warning-color;
+  background-color: $foreground-color;
+  border: 1px solid $warning-color;
+  opacity: 1;
+
+  .notification-message {
+    .title {
+      color: $warning-color;
+    }
+
+    .message {
+      color: $secondary-color;
+    }
+  }
+
+  &.filled {
+    color: $foreground-color;
+    background-color: $warning-color;
+
+    .notification-message {
+      .title {
+        color: $foreground-color;
+      }
+
+      .message {
+        color: $foreground-color;
+      }
+    }
+  }
+}
+
+.notification-error {
+  color: $error-color;
+  background-color: $foreground-color;
+  border: 1px solid $error-color;
+  opacity: 1;
+
+  .notification-message {
+    .title {
+      color: $error-color;
+    }
+
+    .message {
+      color: $secondary-color;
+    }
+  }
+
+  &.filled {
+    color: $foreground-color;
+    background-color: $error-color;
+
+    .notification-message {
+      .title {
+        color: $foreground-color;
+      }
+
+      .message {
+        color: $foreground-color;
+      }
+    }
+  }
+}
+
+.notification-container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999999;
+  width: 320px;
+  padding: 0px 15px;
+  max-height: calc(100% - 30px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.notification {
+  box-sizing: border-box;
+  padding: 15px 15px 15px 58px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.2em;
+  position: relative;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.notification .title {
+  font-size: 1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.notification:hover,
+.notification:focus {
+  opacity: 1;
+}
+
+.notification-enter {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+}
+
+.notification-enter.notification-enter-active {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.4s;
+}
+
+.notification-leave {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
+.notification-leave.notification-leave-active {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+  transition: all 0.4s;
+}
+
+.rounded {
+  .notification {
+    border-radius: $border-radius-rounded;
+  }
+}

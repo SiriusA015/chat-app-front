@@ -1,0 +1,72 @@
+main {
+  margin-left: $sub-menu-width + $main-menu-width + $main-margin;
+  margin-top: $navbar-height + $main-margin - 15;
+  margin-right: $main-margin;
+  margin-bottom: $main-margin - 20;
+  transition: margin-left $menu-collapse-time;
+
+  &.sub-hidden {
+    margin-left: $main-menu-width + $main-margin;
+  }
+
+  &.main-hidden {
+    margin-left: $main-margin;
+  }
+
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include respond-below(xl) {
+    margin-left: $sub-menu-width-lg + $main-menu-width-lg + $main-margin-lg;
+    margin-right: $main-margin-lg;
+    margin-top: $main-margin-lg + $navbar-height-lg -10;
+    margin-bottom: 30px;
+  }
+
+  @include respond-below(lg) {
+    margin-left: $sub-menu-width-md + $main-menu-width-md + $main-margin-md;
+    margin-right: $main-margin-md;
+    margin-top: $main-margin-md + $navbar-height-md -10;
+    margin-bottom: 20px;
+  }
+
+  @include respond-below(sm) {
+    margin-left: $main-margin-xs !important;
+    margin-right: $main-margin-xs !important;
+    margin-top: $main-margin-xs + $navbar-height-xs !important;
+    margin-bottom: 0;
+  }
+
+  @include respond-below(xs) {
+    margin-bottom: 0;
+  }
+}
+
+.rtl {
+  main {
+    margin-right: $sub-menu-width + $main-menu-width + $main-margin;
+    margin-left: $main-margin !important;
+    transition: margin-right $menu-collapse-time;
+
+    @include respond-below(xl) {
+      margin-right: $sub-menu-width-lg + $main-menu-width-lg + $main-margin-lg;
+      margin-left: $main-margin-lg !important;
+    }
+
+    @include respond-below(lg) {
+      margin-right: $sub-menu-width-md + $main-menu-width-md + $main-margin-md;
+      margin-left: $main-margin-md !important;
+    }
+
+    @include respond-below(sm) {
+      margin-right: $main-margin-xs !important;
+      margin-left: $main-margin-xs !important;
+    }
+
+    @include respond-below(xs) {
+      margin-bottom: 0;
+    }
+  }
+}

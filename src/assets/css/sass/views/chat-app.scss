@@ -1,0 +1,202 @@
+.chat-app {
+  .scrollbar-container {
+    padding-left: 10px;
+    margin-left: -10px;
+    padding-right: 10px;
+    margin-right: 0;
+    height: calc(100vh - #{$navbar-height} - 270px);
+
+    @include respond-below(xl) {
+      height: calc(100vh - #{$navbar-height-lg} - 270px);
+    }
+
+    @include respond-below(lg) {
+      height: calc(100vh - #{$navbar-height-md} - 270px);
+    }
+
+    @include respond-below(sm) {
+      height: calc(100vh - #{$navbar-height-xs} - 220px);
+    }
+
+    .ps__thumb-y {
+      right: 10px;
+    }
+  }
+
+  .chat-text-left {
+    padding-left: 64px;
+  }
+
+  .chat-text-right {
+    padding-right: 64px;
+  }
+
+  .list-item-heading {
+    @include respond-below(sm) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .card .card-body {
+    @include respond-below(sm) {
+      padding: 0.75rem;
+    }
+  }
+}
+
+.chat-app-tab-content {
+  height: calc(100% - 45px);
+}
+
+.chat-app-tab-pane {
+  height: calc(100% - 45px);
+}
+
+.chat-input-container {
+  width: 100%;
+  height: 90px;
+  background: $input-background;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include depth(1);
+  transition: padding $menu-collapse-time;
+  padding-left: $main-menu-width + $sub-menu-width + $main-margin;
+  padding-right: $app-menu-width + $main-margin;
+
+  @include respond-below(xl) {
+    padding-left: $main-menu-width-lg + $main-margin-lg;
+    padding-right: $app-menu-width + $main-margin-lg;
+  }
+
+  @include respond-below(lg) {
+    padding-left: $main-menu-width-md + $main-margin-md;
+    padding-right: $main-margin-md;
+  }
+
+  @include respond-below(sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  input {
+    border: initial;
+    width: unset;
+    height: 90px;
+    padding-left: 0;
+    display: inline-block;
+  }
+
+  .send-button {
+    @include respond-below(md) {
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
+    }
+  }
+}
+
+.menu-sub-hidden,
+.sub-hidden {
+  .chat-input-container {
+    padding-left: $main-menu-width + $main-margin;
+
+    @include respond-below(xl) {
+      padding-left: $main-menu-width-lg + $main-margin-lg;
+    }
+
+    @include respond-below(lg) {
+      padding-left: $main-menu-width-md + $main-margin-md;
+    }
+
+    @include respond-below(sm) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}
+
+.menu-main-hidden,
+.menu-hidden,
+.main-hidden {
+  .chat-input-container {
+    padding-left: $main-margin;
+
+    @include respond-below(xl) {
+      padding-left: $main-margin-lg;
+    }
+
+    @include respond-below(lg) {
+      padding-left: $main-margin-md;
+    }
+
+    @include respond-below(sm) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}
+
+.rtl {
+  /*Chat Input Container*/
+  .chat-input-container {
+    padding-right: $main-menu-width + $main-margin + $sub-menu-width;
+    padding-left: $app-menu-width + $main-margin;
+
+    @include respond-below(xl) {
+      padding-right: $main-menu-width-lg + $main-margin-lg + $sub-menu-width-lg;
+      padding-left: $app-menu-width + $main-margin-lg;
+    }
+
+    @include respond-below(lg) {
+      padding-right: $main-menu-width-md + $main-margin-md + $sub-menu-width-md;
+      padding-left: $main-margin-md;
+    }
+
+    @include respond-below(sm) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  .menu-sub-hidden,
+  .sub-hidden {
+    .chat-input-container {
+      padding-right: $main-menu-width + $main-margin;
+
+      @include respond-below(xl) {
+        padding-right: $main-menu-width-lg + $main-margin-lg;
+      }
+
+      @include respond-below(lg) {
+        padding-right: $main-menu-width-md + $main-margin-md;
+      }
+
+      @include respond-below(sm) {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  .menu-main-hidden,
+  .menu-hidden,
+  .main-hidden {
+    .chat-input-container {
+      padding-right: $main-margin;
+
+      @include respond-below(xl) {
+        padding-right: $main-margin-lg;
+      }
+
+      @include respond-below(lg) {
+        padding-right: $main-margin-md;
+      }
+
+      @include respond-below(sm) {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.react-select {
+  outline: initial !important;
+  box-shadow: none !important;
+}
+
+.react-select__value-container {
+  outline: initial !important;
+  box-shadow: none !important;
+  padding: 0.75rem 0.75rem 0.4rem 0.75rem !important;
+  background: $foreground-color !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  padding-left: 9px !important;
+}
+
+.react-select .react-select__single-value,
+.react-select .react-select__multi-value__label {
+  bottom: initial !important;
+}
+
+.react-select .react-select__dropdown-indicator {
+  color: $secondary-color;
+}
+
+.react-select .react-select__menu-list {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.react-select .react-select__single-value,
+.react-select .react-select__multi-value__label {
+  color: $primary-color;
+}
+
+.react-select .react-select__dropdown-indicator,
+.react-select
+  .react-select__control--is-focused
+  .react-select__dropdown-indicator,
+.react-select .react-select__clear-indicator,
+.react-select
+  .react-select__control--is-focused
+  .react-select__clear-indicator {
+  outline: initial;
+  box-shadow: initial;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $theme-color-1 !important;
+  }
+}
+
+.react-select__control {
+  border-radius: $border-radius !important;
+  border: 1px solid $separator-color !important;
+  background: $input-background !important;
+  outline: initial !important;
+  box-shadow: none !important;
+}
+
+.react-select__indicator-separator {
+  display: none;
+}
+
+.react-select__dropdown-indicator svg {
+  width: 15px;
+  height: 15px;
+}
+
+.react-select__option {
+  background: $foreground-color !important;
+  color: $primary-color !important;
+
+  &:hover,
+  &:active {
+    background: $theme-color-1 !important;
+    color: $button-text-color !important;
+  }
+}
+
+.react-select__option--is-selected {
+  background: $theme-color-1 !important;
+  color: $button-text-color !important;
+}
+
+.react-select__control--is-focused {
+  border-color: rgba($theme-color-1, 0.6) !important;
+}
+
+.react-select__multi-value {
+  background: transparent !important;
+  border: 1px solid $separator-color !important;
+}
+
+.react-select__multi-value__remove:hover,
+.react-select__multi-value__remove:active {
+  background: transparent !important;
+  color: $theme-color-1 !important;
+}
+
+.react-select .react-select__menu {
+  border-radius: $border-radius !important;
+  z-index: 20 !important;
+  box-shadow: initial !important;
+  border: 1px solid rgba($theme-color-1, 0.6) !important;
+  border-top: initial !important;
+  margin-top: -1px !important;
+  background-color: $foreground-color !important;
+  border-width: 1px !important;
+}
+
+.react-select__option—is-focused {
+  background: $theme-color-1 !important;
+  color: $button-text-color !important;
+}
+
+.react-select__single-value {
+  bottom: 0 !important;
+  top: 50% !important;
+  padding-top: 2px !important;
+}

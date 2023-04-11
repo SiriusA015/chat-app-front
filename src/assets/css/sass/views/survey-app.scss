@@ -1,0 +1,81 @@
+.survey-app {
+  .answers {
+    .badge {
+      color: $secondary-color;
+      font-size: 13px;
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
+
+    input {
+      padding-right: 70px;
+    }
+  }
+
+  .question {
+    &.edit-quesiton {
+      .edit-mode {
+        display: block;
+      }
+
+      .view-mode {
+        display: none;
+      }
+
+      .view-button {
+        display: inline-block;
+      }
+
+      .edit-button {
+        display: none;
+      }
+    }
+
+    &.view-quesiton {
+      .edit-mode {
+        display: none;
+      }
+
+      .view-mode {
+        display: block;
+      }
+
+      .view-button {
+        display: none;
+      }
+
+      .edit-button {
+        display: inline-block;
+      }
+    }
+  }
+
+  .survey-question-types {
+    .btn-group-icon {
+      font-size: 21px;
+      line-height: 28px;
+    }
+
+    .btn {
+      padding-bottom: 0.3rem;
+    }
+  }
+}
+
+.input-icons {
+  position: absolute;
+  right: 0;
+  top: 9px;
+}
+
+.rtl {
+  .survey-app .answers input {
+    padding-right: 0.75rem;
+    padding-left: 70px;
+  }
+
+  .input-icons {
+    left: 0;
+    right: initial;
+  }
+}

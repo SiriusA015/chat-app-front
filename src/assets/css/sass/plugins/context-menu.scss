@@ -1,0 +1,56 @@
+.react-contextmenu {
+  box-shadow: initial;
+  border-radius: $border-radius;
+  background: $input-background;
+  border: 1px solid rgba($primary-color, 0.15);
+  padding: 0.5rem 0;
+  opacity: 0;
+}
+
+.react-contextmenu.react-contextmenu--visible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+.react-contextmenu-item {
+  padding: 0.5rem 1.5rem;
+  background: $input-background;
+  color: $primary-color;
+
+  cursor: pointer;
+
+  span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    line-height: 15px;
+    display: inline-block;
+  }
+
+  &:hover {
+    color: $primary-color;
+    text-decoration: none;
+    background-color: $background-color;
+  }
+}
+
+.react-contextmenu-item:not(.react-contextmenu-item--disabled):hover {
+  color: $primary-color;
+  text-decoration: none;
+  background-color: $background-color;
+}
+
+.card.react-contextmenu--visible {
+  @include depth(2);
+}
+
+.rtl {
+  .react-contextmenu-item {
+    span {
+      margin-left: initial;
+      margin-right: 0.5rem;
+    }
+  }
+}

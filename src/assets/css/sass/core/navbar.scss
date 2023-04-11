@@ -1,0 +1,478 @@
+.navbar {
+  background: $foreground-color;
+  height: $navbar-height;
+  padding: 1.5rem 0;
+  @include depth(1);
+
+  #notificationDropdown {
+    width: 260px;
+    padding: 1.5rem !important;
+    height: 280px;
+    right: 15px;
+  }
+
+  #iconMenuDropdown {
+    width: 240px;
+    padding: 1.5rem !important;
+    height: 280px;
+  }
+
+  .icon-menu-item {
+    width: 90px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1.7rem;
+    color: rgba($primary-color, 0.8);
+
+    i {
+      font-size: 28px;
+      line-height: 42px;
+    }
+
+    span {
+      text-align: center;
+      padding: 0 10px;
+      line-height: 14px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $theme-color-1;
+    }
+  }
+
+  .menu-button-mobile {
+    color: $secondary-color;
+    text-align: center;
+    margin-left: $main-margin-xs;
+    svg {
+      height: 12px;
+      fill: $primary-color;
+    }
+
+    @include respond-below(sm) {
+      width: 20px;
+    }
+  }
+
+  .menu-button {
+    color: $secondary-color;
+    width: $main-menu-width;
+    text-align: center;
+
+    svg {
+      height: 12px;
+    }
+
+    .main {
+      fill: $primary-color;
+      transition: fill $menu-collapse-time;
+      width: 10px;
+    }
+
+    .sub {
+      fill: $primary-color;
+      transition: fill $menu-collapse-time;
+    }
+
+    &:hover {
+      color: $theme-color-1;
+    }
+
+    @include respond-below(xl) {
+      width: $main-menu-width-lg;
+    }
+
+    @include respond-below(lg) {
+      width: $main-menu-width-md;
+    }
+
+    @include respond-below(sm) {
+      width: 60px;
+    }
+  }
+
+  .navbar-left {
+    flex-basis: 40%;
+  }
+
+  .navbar-right {
+    flex-basis: 40%;
+    text-align: right;
+
+    .rc-switch {
+      margin-top: -2px;
+    }
+
+    .user {
+      margin-right: $main-margin;
+
+      @include respond-below(xl) {
+        margin-right: $main-margin-lg;
+      }
+
+      @include respond-below(lg) {
+        margin-right: $main-margin-md;
+      }
+
+      @include respond-below(sm) {
+        margin-right: $main-margin-xs;
+      }
+    }
+  }
+
+  .navbar-logo {
+    width: 110px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      background: url($logo-path) no-repeat;
+      background-position: center center;
+    }
+
+    .logo-mobile {
+      width: 100%;
+      height: 100%;
+      background: url($logo-path-mobile) no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+
+    @include respond-below(sm) {
+      width: 80px;
+    }
+
+    @include respond-below(xxs) {
+      width: 20px;
+    }
+  }
+
+  .language-button {
+    background: $background-color;
+    border: initial;
+    font-size: 0.8rem;
+    color: $secondary-color;
+    padding: 0.6rem 1rem;
+
+    @include respond-below(xs) {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  .search {
+    position: relative;
+    width: $sub-menu-width;
+    border-radius: 20px;
+    background: $background-color;
+
+    input {
+      border: initial;
+      background: transparent;
+      outline: initial !important;
+      padding: 0.5rem 1rem;
+      line-height: 1.75;
+      font-size: 0.8rem;
+      width: 93%;
+      color: $primary-color;
+    }
+
+    .search-icon {
+      font-size: 17px;
+      border-radius: 10px;
+      color: $separator-color;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      bottom: -10px;
+      right: 3px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: $theme-color-1;
+      }
+    }
+
+    @include respond-below(lg) {
+      width: $sub-menu-width * 0.7;
+      input {
+        width: 85%;
+      }
+    }
+
+    @include respond-below(md) {
+      width: $sub-menu-width/2;
+      input {
+        width: 85%;
+      }
+    }
+
+    @include respond-below(sm) {
+      width: 30px;
+      height: 30px;
+      background: initial;
+      margin-left: 0.6rem;
+      color: rgba($primary-color, 0.7);
+
+      input {
+        display: none;
+      }
+
+      .search-icon {
+        font-size: 17px;
+        width: 30px;
+        height: 30px;
+        bottom: -3px;
+        right: 0;
+        color: inherit;
+      }
+
+      &.mobile-view {
+        display: block;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        background: $foreground-color;
+        left: 0;
+        top: 0;
+        height: $navbar-height-xs;
+        margin-left: 15px;
+
+        input {
+          display: block;
+          width: 100%;
+          height: 70px;
+          padding-left: 0;
+        }
+
+        span {
+          top: 50%;
+          transform: translateY(-50%);
+          right: 25px;
+        }
+      }
+    }
+  }
+
+  .header-icons {
+    margin-right: 1rem;
+
+    @include respond-below(xs) {
+      margin-right: 0;
+    }
+  }
+
+  .header-icon {
+    font-size: 16px;
+    color: $secondary-color;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    vertical-align: initial;
+
+    @include respond-below(xs) {
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+    }
+
+    &:hover {
+      color: $theme-color-1;
+    }
+
+    &#fullScreenButton i:last-of-type {
+      display: none;
+    }
+
+    &.notificationButton {
+      .count {
+        font-size: 9px;
+        color: $theme-color-1;
+        border: 1px solid $theme-color-1;
+        border-radius: 10px;
+        position: absolute;
+        width: 18px;
+        height: 15px;
+        text-align: center;
+        font-weight: 700;
+        top: -4px;
+        right: 0px;
+        line-height: 14px;
+
+        @include respond-below(xs) {
+          right: -1px;
+        }
+      }
+    }
+  }
+
+  .user {
+    color: lighten($primary-color, 30%);
+    position: relative;
+
+    button {
+      color: lighten($primary-color, 30%);
+    }
+
+    img {
+      margin-left: 10px;
+      border-radius: 30px;
+      width: 40px;
+    }
+
+    @include respond-below(md) {
+      .name {
+        display: none;
+      }
+    }
+
+    @include respond-below(sm) {
+      img {
+        width: 30px;
+      }
+
+      margin-left: initial;
+
+      &:after {
+        font-size: 11px;
+        width: 14px;
+        height: 14px;
+        bottom: -3px;
+        right: -3px;
+      }
+    }
+  }
+
+  @include respond-below(xl) {
+    height: $navbar-height-lg;
+  }
+
+  @include respond-below(lg) {
+    height: $navbar-height-md;
+    padding: 1rem 0 1rem 0;
+  }
+
+  @include respond-below(sm) {
+    height: $navbar-height-xs;
+    padding: 10px 0;
+  }
+}
+
+.rtl {
+  .navbar {
+    .navbar-right {
+      text-align: left;
+    }
+
+    .menu-button-mobile {
+      margin-right: 15px;
+      margin-left: initial;
+    }
+
+    .menu-button {
+      text-align: center;
+    }
+
+    .icon-menu-item {
+      text-align: center;
+
+      i {
+        text-align: center;
+      }
+
+      span {
+        text-align: center;
+      }
+    }
+
+    .search {
+      .search-icon {
+        right: initial;
+        left: 5px;
+      }
+
+      @include respond-below(sm) {
+        margin-right: 0.6rem;
+        margin-left: initial;
+
+        input {
+          display: none;
+        }
+
+        &.mobile-view {
+          margin-left: initial;
+          margin-right: 15px;
+
+          input {
+            display: block;
+            width: 100%;
+            height: 70px;
+            padding-left: 0;
+          }
+
+          span {
+            left: 15px;
+            right: initial;
+          }
+        }
+      }
+    }
+
+    .navbar-right {
+      text-align: left;
+
+      .user {
+        margin-left: $main-margin;
+        margin-right: 0;
+
+        @include respond-below(xl) {
+          margin-left: $main-margin-lg;
+          margin-right: 0;
+        }
+
+        @include respond-below(lg) {
+          margin-left: $main-margin-md;
+          margin-right: 0;
+        }
+
+        @include respond-below(sm) {
+          margin-left: $main-margin-xs;
+          margin-right: 0;
+        }
+
+        img {
+          margin-right: 10px;
+          margin-left: initial;
+        }
+      }
+
+      .header-icons {
+        margin-right: initial;
+        margin-left: 0.5rem;
+        @include respond-below(xs) {
+          margin-left: 0;
+        }
+      }
+
+      #notificationButton {
+        .count {
+          text-align: center;
+
+          @include respond-below(xs) {
+            left: -1px;
+          }
+        }
+      }
+
+      #userDropdown,
+      #userDropdown * {
+        text-align: left;
+      }
+    }
+  }
+}

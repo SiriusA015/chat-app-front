@@ -1,0 +1,39 @@
+.simple-line-icons .glyph,
+.mind-icons .glyph {
+  width: 14.28%;
+  text-align: center !important;
+  float: left;
+  height: 100px;
+
+  .glyph-icon,
+  .fa {
+    font-size: 32px;
+    text-align: center !important;
+  }
+
+  .author-name {
+    display: none;
+  }
+
+  .class-name {
+    font-size: 0.76rem;
+    color: $muted-color !important;
+    text-align: center !important;
+  }
+
+  @include respond-below(lg) {
+    width: 16.66%;
+  }
+
+  @include respond-below(md) {
+    width: 20%;
+  }
+
+  @include respond-below(sm) {
+    width: 25%;
+  }
+
+  @include respond-below(xs) {
+    width: 50%;
+  }
+}

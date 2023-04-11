@@ -1,0 +1,179 @@
+.bg-theme-2,
+.badge-theme-2 {
+  background-color: $theme-color-2 !important;
+  color: $button-text-color;
+}
+
+.bg-theme-3,
+.badge-theme-3 {
+  background-color: $theme-color-3 !important;
+  color: $button-text-color;
+}
+
+.bg-primary,
+.bg-theme-1,
+.badge-primary,
+.badge-theme-1 {
+  background-color: $theme-color-1 !important;
+  color: $button-text-color;
+}
+
+.bg-secondary,
+.badge-secondary {
+  background-color: $theme-color-2 !important;
+  color: $button-text-color;
+}
+
+.bg-muted {
+  background-color: $muted-color;
+}
+
+.bg-semi-muted {
+  background-color: $background-color;
+}
+
+.badge-warning {
+  background-color: $warning-color;
+}
+
+.badge-success {
+  background-color: $success-color;
+}
+
+.badge-info {
+  background-color: $info-color;
+}
+
+.badge-danger {
+  background-color: $error-color;
+}
+
+.badge-success,
+.badge-danger,
+.badge-warning,
+.badge-info {
+  color: $button-text-color;
+}
+
+.badge {
+  padding: 0.55em 0.75em 0.6em 0.75em;
+  font-size: 74%;
+
+  &.badge-pill {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+
+  &.badge-top-left {
+    top: 10px;
+    left: -7px;
+  }
+
+  &.badge-top-left-2 {
+    top: 40px;
+    left: -7px;
+  }
+  &.badge-top-left-3 {
+    top: 70px;
+    left: -7px;
+  }
+
+  &.badge-top-right {
+    top: 8px;
+    right: -7px;
+  }
+
+  &.badge-top-right-2 {
+    top: 40px;
+    right: -7px;
+  }
+}
+
+.badge-light {
+  background-color: $light-btn-background;
+  color: $dark-btn-background;
+}
+
+.badge-dark {
+  background-color: $dark-btn-background;
+  color: $light-btn-background;
+}
+
+.badge-outline-primary,
+.badge-outline-theme-1 {
+  background: unset;
+  border: 1px solid $theme-color-1;
+  color: $theme-color-1;
+}
+
+.badge-outline-secondary,
+.badge-outline-theme-2 {
+  background: unset;
+  border: 1px solid $theme-color-2;
+  color: $theme-color-2;
+}
+
+.badge-outline-theme-3 {
+  background: unset;
+  border: 1px solid $theme-color-3;
+  color: $theme-color-3;
+}
+
+.badge-outline-success {
+  background: unset;
+  border: 1px solid $success-color;
+  color: $success-color;
+}
+
+.badge-outline-danger {
+  background: unset;
+  border: 1px solid $error-color;
+  color: $error-color;
+}
+
+.badge-outline-warning {
+  background: unset;
+  border: 1px solid $warning-color;
+  color: $warning-color;
+}
+
+.badge-outline-info {
+  background: unset;
+  border: 1px solid $info-color;
+  color: $info-color;
+}
+
+.badge-outline-light {
+  background: unset;
+  border: 1px solid $light-btn-background;
+  color: $light-btn-background;
+}
+
+.badge-outline-dark {
+  background: unset;
+  border: 1px solid $dark-btn-background;
+  color: $dark-btn-background;
+}
+.rtl {
+  .badge {
+    &.badge-top-left {
+      left: initial;
+      right: -7px;
+    }
+
+    &.badge-top-left-2 {
+      left: initial;
+      right: -7px;
+    }
+
+    &.badge-top-right {
+      left: -7px;
+      right: initial;
+    }
+
+    &.badge-top-right-2 {
+      left: -7px;
+      right: initial;
+    }
+  }
+}

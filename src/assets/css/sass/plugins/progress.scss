@@ -1,0 +1,104 @@
+.progress {
+  background-color: $separator-color-light;
+  height: 3px;
+}
+
+.progress-bar {
+  background-color: $theme-color-1;
+}
+
+.CircularProgressbar-text {
+  fill: $primary-color !important;
+}
+
+.progress-bar-circle {
+  width: 54px;
+  height: 54px;
+
+  svg path:first-of-type {
+    stroke: $separator-color;
+  }
+
+  svg path:last-of-type {
+    stroke: $theme-color-1;
+  }
+
+  &.progress-bar-banner {
+    svg path:first-of-type {
+      stroke: darken($theme-color-1, 15%);
+    }
+
+    svg path:last-of-type {
+      stroke: $button-text-color;
+    }
+  }
+}
+
+.progress-banner {
+  height: 200px;
+  background-image: linear-gradient(
+    to right top,
+    $gradient-color-2,
+    $gradient-color-3,
+    $gradient-color-1
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  cursor: pointer;
+
+  .CircularProgressbar .CircularProgressbar-text {
+    fill: $button-text-color !important;
+  }
+
+  .lead {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+    @include respond-below(lg) {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  i {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+
+    @include respond-below(lg) {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  .progress-bar-circle.progress-bar-banner {
+    width: 120px;
+    height: 120px;
+
+    svg path:last-of-type {
+      stroke: darken($button-text-color, 10%);
+    }
+
+    @include respond-below(lg) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .progress-bar-banner {
+    .progressbar-text {
+      color: $primary-color !important;
+      font-size: 1.7rem;
+      width: 110px;
+      font-weight: 300;
+
+      @include respond-below(lg) {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+
+  &:hover {
+    background-position: right top;
+  }
+}

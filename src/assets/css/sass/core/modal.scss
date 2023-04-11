@@ -1,0 +1,88 @@
+.modal {
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 1.75rem;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid $separator-color;
+  }
+
+  .modal-footer {
+    border-top: 1px solid $separator-color;
+  }
+
+  .close {
+    color: $primary-color;
+    text-shadow: initial;
+  }
+}
+
+.modal-content {
+  border: initial;
+  border-radius: 0.1rem;
+  background: $foreground-color;
+}
+
+.modal-dialog {
+  @include depth(2);
+}
+
+.modal-right {
+  padding-right: 0 !important;
+
+  .modal-dialog {
+    margin: 0 auto;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    max-width: 380px;
+  }
+
+  .modal-content {
+    min-height: 100%;
+  }
+
+  .modal-header {
+    height: $navbar-height;
+
+    @include respond-below(xl) {
+      height: $navbar-height-lg;
+    }
+
+    @include respond-below(lg) {
+      height: $navbar-height-md;
+    }
+
+    @include respond-below(sm) {
+      height: $navbar-height-xs;
+    }
+  }
+
+  .modal-footer {
+    justify-content: center;
+  }
+
+  .modal.fade .modal-dialog {
+    transform: translate(25%, 0) !important;
+  }
+
+  .modal.show .modal-dialog {
+    transform: translate(0, 0) !important;
+  }
+}
+
+.rtl {
+  .modal {
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+      padding: 1.75rem;
+      @include respond-below(xs) {
+        padding: 1.5rem;
+      }
+    }
+  }
+}

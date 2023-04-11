@@ -1,0 +1,64 @@
+.alert {
+  border-radius: 0;
+}
+
+.alert-primary {
+  color: $theme-color-1;
+  background-color: rgba($theme-color-1, 0.2);
+  border-color: rgba($theme-color-1, 0.1);
+}
+
+.alert-secondary {
+  color: $theme-color-2;
+  background-color: rgba($theme-color-2, 0.2);
+  border-color: rgba($theme-color-2, 0.1);
+}
+
+.alert-success {
+  color: $success-color;
+  background-color: rgba($success-color, 0.2);
+  border-color: rgba($success-color, 0.1);
+}
+
+.alert-info {
+  color: $info-color;
+  background-color: rgba($info-color, 0.2);
+  border-color: rgba($info-color, 0.1);
+}
+
+.alert-warning {
+  color: $warning-color;
+  background-color: rgba($warning-color, 0.2);
+  border-color: rgba($warning-color, 0.1);
+}
+
+.alert-danger {
+  color: $error-color;
+  background-color: rgba($error-color, 0.2);
+  border-color: rgba($error-color, 0.1);
+}
+
+.alert-light {
+  color: $light-btn-background;
+  background-color: rgba($light-btn-background, 0.2);
+  border-color: rgba($light-btn-background, 0.1);
+}
+
+.alert-dark {
+  color: $dark-btn-background;
+  background-color: rgba($dark-btn-background, 0.2);
+  border-color: rgba($dark-btn-background, 0.1);
+}
+
+.alert-dismissible .close {
+  text-shadow: initial;
+}
+
+.alert *[data-notify='title'] {
+  display: block;
+  font-size: 0.9rem;
+}
+
+div[data-notify='container'] {
+  padding: 18px;
+}

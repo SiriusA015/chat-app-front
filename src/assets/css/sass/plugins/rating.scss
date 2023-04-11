@@ -1,0 +1,35 @@
+.br-theme-bootstrap-stars .br-widget a.br-active:after {
+  color: $theme-color-1 !important;
+}
+
+.br-theme-bootstrap-stars .br-widget a.br-selected:after {
+  color: $theme-color-1 !important;
+}
+
+.react-rater {
+  display: block !important;
+  font-size: 16px !important;
+  color: $separator-color !important;
+}
+
+.react-rater-star {
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1 !important;
+  font-family: 'simple-line-icons';
+  color: $separator-color !important;
+  margin-right: 3px !important;
+  font-size: 18px !important;
+  float: left !important;
+
+  &.is-active,
+  &.will-be-active {
+    color: $theme-color-1 !important;
+  }
+
+  &:after {
+    content: '\e09b';
+  }
+}

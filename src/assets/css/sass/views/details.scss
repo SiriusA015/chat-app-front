@@ -1,0 +1,126 @@
+
+.glide {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.glide.details {
+    img {
+        margin-bottom: 0;
+    }
+
+    .glide__slides {
+        margin-bottom: 0;
+    }
+}
+
+.glide.thumbs {
+    cursor: pointer;
+    width: 340px;
+    margin: 0 auto;
+
+    @include respond-below(sm) {
+        width: 300px;
+    }
+
+    @include respond-below(xs) {
+        width: calc(100% - 80px);
+    }
+
+    .glide__slide {
+        text-align: center;
+        opacity: 0.4;
+        transition: opacity $animation-time-short;
+        &.active,
+        &:hover {
+            opacity: 1;
+        }
+
+        img {
+            width: 60px;
+            margin-bottom: 0;
+        }
+    }
+
+    .glide__slides {
+        margin-bottom: 0;
+        margin: 0 auto;
+    }
+
+    .glide__arrows {
+        width: 100%;
+
+        .glide__arrow--left {
+            border: initial;
+            background: initial;
+            box-shadow: initial;
+            top: 23px;
+            left: -50px;
+            font-size: 20px;
+            color: $theme-color-1;
+        }
+
+        .glide__arrow--right {
+            border: initial;
+            background: initial;
+            box-shadow: initial;
+            top: 23px;
+            right: -50px;
+            font-size: 20px;
+            color: $theme-color-1;
+        }
+    }
+}
+
+.ReactModal__Overlay {
+    z-index: 1070 !important;
+}
+
+.ril__toolbar {
+    background-color: initial !important;
+}
+
+.ril__builtinButton {
+    background-size: 16px !important;
+    vertical-align: top;
+    width: 40px;
+    height: 38px;
+}
+
+.ril__toolbarItem {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    margin: 10px 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.ril__toolbarRightSide {
+    padding-right: initial;
+}
+
+.ril__toolbarLeftSide li {
+    display: none;
+}
+
+.ril__navButtons {
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    padding: 25px;
+    padding: 21px;
+}
+
+.ril__navButtonNext {
+    background-size: 12px;
+    right: 10px;
+}
+
+.ril__navButtonPrev {
+    background-size: 12px;
+    left: 10px;
+}

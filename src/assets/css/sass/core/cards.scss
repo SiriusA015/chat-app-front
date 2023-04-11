@@ -1,0 +1,363 @@
+.card {
+  border: initial;
+  background: $foreground-color;
+
+  .card-header .card-icon {
+    right: 5px;
+    top: 5px;
+
+    i {
+      font-size: 12px;
+      color: $separator-color;
+    }
+  }
+
+  .card-subtitle {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .card-header .handle {
+    cursor: default;
+  }
+
+  border-radius: calc(0.15rem - 1px);
+  @include depth(1);
+
+  .card-body {
+    padding: 1.75rem;
+
+    @include respond-below(xs) {
+      padding: 1.25rem;
+    }
+
+    &.sm {
+      padding: 1.25rem 1.75rem;
+    }
+  }
+
+  .card-title {
+    margin-bottom: 1.5rem;
+    @include respond-below(sm) {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+
+.card-title {
+  font-size: 1.1rem;
+  @include respond-below(sm) {
+    font-size: 0.9rem;
+  }
+}
+
+.card-img {
+  border-radius: calc(0.25rem - 1px);
+  height: 100%;
+  object-fit: cover;
+  max-height: 200px;
+  width: unset;
+}
+
+.card-img-fluid {
+  border-radius: calc(0.25rem - 1px);
+  object-fit: cover;
+}
+
+.card-img-bottom {
+  width: 100%;
+  border-bottom-left-radius: calc(0.15rem - 1px);
+  border-bottom-right-radius: calc(0.15rem - 1px);
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.15rem - 1px);
+  border-top-right-radius: calc(0.15rem - 1px);
+}
+
+.card-img-left {
+  width: 100%;
+  border-top-left-radius: calc(0.15rem - 1px);
+  border-bottom-left-radius: calc(0.15rem - 1px);
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-right {
+  width: 100%;
+  border-top-right-radius: calc(0.15rem - 1px);
+  border-bottom-right-radius: calc(0.15rem - 1px);
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img-overlay {
+  background: rgba(#000000, 0.5);
+  padding: 1.75rem;
+
+  @include respond-below(xs) {
+    padding: 1rem;
+  }
+}
+
+.card-top-buttons {
+  padding: 1.3rem;
+  right: 0;
+  top: 0;
+
+  @include respond-below(xs) {
+    padding: 0.35rem;
+  }
+}
+
+.card-header {
+  border: initial;
+  background: initial;
+  padding-top: 0;
+}
+.item-check {
+  pointer-events: none;
+}
+
+.list-thumbnail {
+  border-radius: $border-radius;
+  padding: 0;
+  border: initial;
+  height: auto;
+  max-width: unset;
+  height: 85px;
+  object-fit: cover;
+  width: unset !important;
+
+  @include respond-below(md) {
+    height: 80px;
+  }
+
+  @include respond-below(xs) {
+    height: 70px;
+  }
+
+  &.responsive {
+    @include respond-below(md) {
+      width: unset;
+      height: 136px;
+    }
+
+    @include respond-below(xs) {
+      width: 110px !important;
+      height: 100%;
+    }
+
+    @include respond-below(xxs) {
+      width: 90px !important;
+      height: 100%;
+    }
+  }
+
+  &.small {
+    height: 60px;
+    font-size: 1rem;
+
+    @include respond-below(md) {
+      height: 55px;
+    }
+
+    @include respond-below(xs) {
+      height: 50px;
+    }
+  }
+
+  &.xsmall {
+    height: 40px;
+    font-size: 1rem;
+
+    @include respond-below(md) {
+      height: 40px;
+    }
+
+    @include respond-below(xs) {
+      height: 40px;
+    }
+  }
+}
+
+.list-thumbnail-letters {
+  width: 85px;
+  height: 85px;
+  background: $theme-color-1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: $button-text-color;
+
+  @include respond-below(md) {
+    width: 80px;
+    height: 80px;
+  }
+
+  @include respond-below(xs) {
+    width: 70px;
+    height: 70px;
+  }
+
+  &.small {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+
+    @include respond-below(md) {
+      width: 55px;
+      height: 55px;
+    }
+
+    @include respond-below(xs) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.icon-cards-row {
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: -10px;
+
+  .glide__slides {
+    padding-bottom: 0px;
+    padding-top: 10px;
+
+    .icon-row-item {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  [class*='col-'] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .card-body {
+    padding: 2rem 0.5rem;
+  }
+
+  .card-text {
+    color: $secondary-color;
+    height: 30px;
+    line-height: 26px;
+  }
+
+  .lead {
+    color: $theme-color-1;
+    margin-bottom: 0;
+  }
+
+  i {
+    font-size: 46px;
+    line-height: 66px;
+    color: $theme-color-1;
+  }
+
+  .card {
+    transition: box-shadow $animation-time-long;
+    cursor: pointer;
+  }
+
+  @include respond-below(xl) {
+    .card-text {
+      height: 48px;
+      line-height: 18px;
+    }
+
+    .lead {
+      font-size: 1.6rem;
+    }
+
+    i {
+      font-size: 32px;
+      line-height: 47px;
+    }
+  }
+}
+
+.rounded {
+  .card-img,
+  .card-img-fluid,
+  .card-img-overlay {
+    border-radius: $border-radius-rounded;
+  }
+
+  .card-img-bottom,
+  .card-img-bottom .vjs-poster,
+  .card-img-bottom .vjs-tech {
+    border-bottom-left-radius: $border-radius-rounded;
+    border-bottom-right-radius: $border-radius-rounded;
+    border-top-left-radius: initial;
+    border-top-right-radius: initial;
+  }
+
+  .card-img-top,
+  .card-img-top .vjs-poster,
+  .card-img-top .vjs-tech {
+    border-top-left-radius: $border-radius-rounded;
+    border-top-right-radius: $border-radius-rounded;
+    border-bottom-left-radius: initial;
+    border-bottom-right-radius: initial;
+  }
+
+  .card-img-left {
+    border-top-left-radius: $border-radius-rounded;
+    border-bottom-left-radius: $border-radius-rounded;
+    border-top-right-radius: initial !important;
+    border-bottom-right-radius: initial !important;
+  }
+
+  .card-img-right {
+    border-top-right-radius: $border-radius-rounded;
+    border-bottom-right-radius: $border-radius-rounded;
+    border-top-left-radius: initial !important;
+    border-bottom-left-radius: initial !important;
+  }
+
+  .card {
+    border-radius: $border-radius-rounded;
+  }
+}
+
+.rtl {
+  .card .card-header .card-icon {
+    left: 10px;
+    right: initial;
+  }
+  .card-top-buttons {
+    right: initial;
+    left: 0;
+  }
+
+  &.rounded {
+    .card-img,
+    .card-img-fluid,
+    .card-img-overlay {
+      border-radius: $border-radius-rounded;
+    }
+
+    .card-img-left {
+      border-top-right-radius: $border-radius-rounded !important;
+      border-bottom-right-radius: $border-radius-rounded !important;
+      border-top-left-radius: initial !important;
+      border-bottom-left-radius: initial !important;
+    }
+
+    .card-img-right {
+      border-top-left-radius: $border-radius-rounded !important;
+      border-bottom-left-radius: $border-radius-rounded !important;
+      border-top-right-radius: initial !important;
+      border-bottom-right-radius: initial !important;
+    }
+  }
+}
+.card.active {
+  @include depth(2);
+}

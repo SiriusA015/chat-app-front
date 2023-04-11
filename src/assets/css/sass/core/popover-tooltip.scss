@@ -1,0 +1,495 @@
+.popover,
+.tooltip {
+  top: -145px !important;
+
+  @include respond-below(xl) {
+    top: -130px !important;
+  }
+
+  @include respond-below(lg) {
+    top: -110px !important;
+  }
+
+  @include respond-below(sm) {
+    top: -85px !important;
+  }
+}
+
+.popover {
+  border-radius: $border-radius;
+  background-color: $foreground-color;
+  border-color: $separator-color;
+
+  .popover-body {
+    color: $primary-color;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.popover-header {
+  background-color: transparent;
+  border-bottom: initial;
+}
+
+.tooltip-inner {
+  padding: 0.5rem 0.75rem;
+  color: $primary-color;
+  background-color: $foreground-color;
+  border-radius: 0.1rem;
+  border: 1px solid $separator-color;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.bs-popover-right .arrow::before,
+.bs-popover-auto[x-placement^='right'] .arrow::before {
+  border-right-color: $separator-color;
+}
+
+.bs-popover-right .arrow::after,
+.bs-popover-auto[x-placement^='right'] .arrow::after {
+  border-right-color: $foreground-color;
+}
+
+.bs-popover-left .arrow::before,
+.bs-popover-auto[x-placement^='left'] .arrow::before {
+  border-left-color: $separator-color;
+}
+
+.bs-popover-left .arrow::after,
+.bs-popover-auto[x-placement^='left'] .arrow::after {
+  border-left-color: $foreground-color;
+}
+
+.bs-popover-bottom .arrow::before,
+.bs-popover-auto[x-placement^='bottom'] .arrow::before {
+  border-bottom-color: $separator-color;
+}
+
+.bs-popover-bottom .arrow::after,
+.bs-popover-auto[x-placement^='bottom'] .arrow::after {
+  border-bottom-color: $foreground-color;
+}
+
+.bs-popover-top .arrow::before,
+.bs-popover-auto[x-placement^='top'] .arrow::before {
+  border-top-color: $separator-color;
+}
+
+.bs-popover-top .arrow::after,
+.bs-popover-auto[x-placement^='top'] .arrow::after {
+  border-top-color: $foreground-color;
+}
+
+.tooltip .arrow::before,
+.tooltip .arrow::after {
+  position: absolute;
+  display: block;
+  content: '';
+  border-color: transparent;
+  border-style: solid;
+}
+
+.bs-tooltip-right .arrow::before,
+.bs-tooltip-auto[x-placement^='right'] .arrow::before,
+.bs-tooltip-right .arrow::after,
+.bs-tooltip-auto[x-placement^='right'] .arrow::after {
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.bs-tooltip-right .arrow::before,
+.bs-tooltip-auto[x-placement^='right'] .arrow::before {
+  left: 0;
+  border-right-color: $separator-color;
+}
+
+.bs-tooltip-right .arrow::after,
+.bs-tooltip-auto[x-placement^='right'] .arrow::after {
+  left: 1px;
+  border-right-color: $foreground-color;
+}
+
+.bs-tooltip-right .arrow::before,
+.bs-tooltip-auto[x-placement^='right'] .arrow::before,
+.bs-tooltip-right .arrow::after,
+.bs-tooltip-auto[x-placement^='right'] .arrow::after {
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+}
+
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-auto[x-placement^='top'] .arrow::before {
+  bottom: 0;
+  border-top-color: $separator-color;
+}
+
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-auto[x-placement^='top'] .arrow::before,
+.bs-tooltip-top .arrow::after,
+.bs-tooltip-auto[x-placement^='top'] .arrow::after {
+  border-width: 0.5rem 0.5rem 0;
+}
+
+.bs-tooltip-top .arrow::after,
+.bs-tooltip-auto[x-placement^='top'] .arrow::after {
+  bottom: 1px;
+  border-top-color: $foreground-color;
+}
+
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-auto[x-placement^='top'] .arrow::before,
+.bs-tooltip-top .arrow::after,
+.bs-tooltip-auto[x-placement^='top'] .arrow::after {
+  border-width: 0.4rem 0.4rem 0;
+}
+
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::before,
+.bs-tooltip-bottom .arrow::after,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::after {
+  border-width: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::before {
+  top: 0;
+  border-bottom-color: $separator-color;
+}
+
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::before,
+.bs-tooltip-bottom .arrow::after,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::after {
+  border-width: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.bs-tooltip-bottom .arrow::after,
+.bs-tooltip-auto[x-placement^='bottom'] .arrow::after {
+  top: 1px;
+  border-bottom-color: $foreground-color;
+}
+
+.bs-tooltip-left .arrow::before,
+.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+.bs-tooltip-left .arrow::after,
+.bs-tooltip-auto[x-placement^='left'] .arrow::after {
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.bs-tooltip-left .arrow::before,
+.bs-tooltip-auto[x-placement^='left'] .arrow::before {
+  right: 0;
+  border-left-color: $separator-color;
+}
+
+.bs-tooltip-left .arrow::before,
+.bs-tooltip-auto[x-placement^='left'] .arrow::before,
+.bs-tooltip-left .arrow::after,
+.bs-tooltip-auto[x-placement^='left'] .arrow::after {
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.bs-tooltip-left .arrow::after,
+.bs-tooltip-auto[x-placement^='left'] .arrow::after {
+  right: 0;
+  border-left-color: $foreground-color;
+}
+
+.rtl {
+  .tooltip-label-right .invalid-feedback::before {
+    left: initial;
+    right: -5px;
+    border-right: initial;
+    border-left: solid 5px $theme-color-1;
+  }
+
+  .tooltip-label-right .invalid-feedback::after {
+    right: -4px;
+    left: initial;
+    border-left: solid 5px $foreground-color;
+    border-right: initial;
+  }
+
+  .tooltip-label-right .invalid-feedback {
+    left: initial;
+    right: 50px;
+  }
+
+  .error-l-0 .invalid-feedback {
+    left: initial;
+    right: 0;
+  }
+
+  .error-l-25 .invalid-feedback {
+    left: initial;
+    right: 25px;
+  }
+
+  .error-l-50 .invalid-feedback {
+    left: initial;
+    right: 50px;
+  }
+
+  .error-l-75 .invalid-feedback {
+    left: initial;
+    right: 75px;
+  }
+
+  .error-l-100 .invalid-feedback {
+    left: initial;
+    right: 100px;
+  }
+
+  .error-l-125 .invalid-feedback {
+    left: initial;
+    right: 125px;
+  }
+
+  .error-l-150 .invalid-feedback {
+    left: initial;
+    right: 150px;
+  }
+
+  .error-l-175 .invalid-feedback {
+    left: initial;
+    right: 175px;
+  }
+
+  .error-l-200 .invalid-feedback {
+    left: initial;
+    right: 200px;
+  }
+
+  .error-l-225 .invalid-feedback {
+    left: initial;
+    right: 225px;
+  }
+
+  .error-l-250 .invalid-feedback {
+    left: initial;
+    right: 250px;
+  }
+
+  .error-l-275 .invalid-feedback {
+    left: initial;
+    right: 275px;
+  }
+}
+
+.tooltip-right-bottom .invalid-feedback {
+  left: initial;
+  right: 0;
+  transform: translateX(0);
+
+  &::before,
+  &::after {
+    left: initial;
+    right: 25px;
+    margin-left: 0;
+  }
+}
+
+.tooltip-left-bottom .invalid-feedback {
+  left: 0;
+  right: initial;
+  transform: translateX(0);
+
+  &::before,
+  &::after {
+    left: 25px;
+    right: initial;
+    margin-left: 0;
+  }
+}
+
+.tooltip-center-top .invalid-feedback {
+  bottom: 80%;
+  transform: translateX(-50%) translateY(50%);
+  top: initial;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: -5px;
+    border-top: solid 5px $theme-color-1;
+    border-bottom: initial;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: -4px;
+    border-top: solid 5px $foreground-color;
+    border-bottom: initial;
+  }
+}
+
+.tooltip-right-top .invalid-feedback {
+  bottom: 80%;
+  transform: translateX(0) translateY(50%);
+  top: initial;
+  left: initial;
+  right: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: -5px;
+    border-top: solid 5px $theme-color-1;
+    border-bottom: initial;
+    left: initial;
+    right: 25px;
+    margin-left: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: -4px;
+    border-top: solid 5px $foreground-color;
+    border-bottom: initial;
+    left: initial;
+    right: 25px;
+    margin-left: 0;
+  }
+}
+
+.tooltip-left-top .invalid-feedback {
+  bottom: 80%;
+  transform: translateX(0) translateY(50%);
+  top: initial;
+  left: 0;
+  right: initial;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: -5px;
+    border-top: solid 5px $theme-color-1;
+    border-bottom: initial;
+    left: 25px;
+    right: initial;
+    margin-left: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: -4px;
+    border-top: solid 5px $foreground-color;
+    border-bottom: initial;
+    left: 25px;
+    right: initial;
+    margin-left: 0;
+  }
+}
+
+.tooltip-label-right .invalid-feedback {
+  transform: translateX(0) translateY(-50%);
+  top: 16px;
+  left: 50px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: initial;
+    margin-left: 0;
+    border: initial;
+    border-top: solid 5px transparent;
+    border-bottom: solid 5px transparent;
+    border-right: solid 5px $theme-color-1;
+    bottom: initial;
+    top: 12px;
+    width: 5px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: initial;
+    left: -4px;
+    right: initial;
+    margin-left: 0;
+    width: 5px;
+    border: initial;
+    border-top: solid 5px transparent;
+    border-bottom: solid 5px transparent;
+    border-right: solid 5px $foreground-color;
+    bottom: initial;
+    top: 12px;
+    width: 5px;
+  }
+}
+
+.error-l-0 .invalid-feedback {
+  left: 0px;
+}
+
+.error-l-25 .invalid-feedback {
+  left: 25px;
+}
+
+.error-l-50 .invalid-feedback {
+  left: 50px;
+}
+
+.error-l-75 .invalid-feedback {
+  left: 75px;
+}
+
+.error-l-100 .invalid-feedback {
+  left: 100px;
+}
+
+.error-l-125 .invalid-feedback {
+  left: 125px;
+}
+
+.error-l-150 .invalid-feedback {
+  left: 150px;
+}
+
+.error-l-175 .invalid-feedback {
+  left: 175px;
+}
+
+.error-l-200 .invalid-feedback {
+  left: 200px;
+}
+
+.error-l-225 .invalid-feedback {
+  left: 225px;
+}
+
+.error-l-250 .invalid-feedback {
+  left: 250px;
+}
+
+.error-l-275 .invalid-feedback {
+  left: 275px;
+}
+
+.error-t-negative .invalid-feedback {
+  top: -10px;
+}
+
+.rounded {
+  .popover,
+  .tooltip-inner {
+    border-radius: $border-radius-rounded;
+  }
+  
+  .invalid-feedback,
+  .valid-tooltip,
+  div.error {
+    border-radius: 10px;
+  }
+}

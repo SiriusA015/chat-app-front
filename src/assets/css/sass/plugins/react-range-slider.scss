@@ -1,0 +1,57 @@
+.rc-slider-tooltip {
+  background: $input-background !important;
+  color: $primary-color !important;
+  border: 1px solid $separator-color !important;
+  border-radius: $border-radius !important;
+  text-align: center !important;
+  bottom: unset !important;
+  padding: 5px !important;
+  transform: translateX(-50%) !important;
+}
+
+.rc-slider-handle {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 20px !important;
+  background: $foreground-color !important;
+  cursor: default !important;
+  border: 1px solid $separator-color !important;
+  box-shadow: initial !important;
+}
+
+.rc-slider .rc-slider-track,
+.rc-slider .rc-slider-rail,
+.rc-slider .rc-slider-step {
+  height: 7px;
+}
+
+.rc-slider-rail {
+  border: 1px solid $separator-color !important;
+  background: $foreground-color !important;
+}
+
+.rc-slider-handle {
+  margin-top: -7px !important;
+}
+
+.rc-slider-track {
+  background: $theme-color-1 !important;
+}
+
+.rc-slider-vertical{
+  height: 150px !important;
+}
+.rc-slider-vertical .rc-slider-handle {
+  margin-left:-7px  !important;
+}
+
+.rc-slider-vertical .rc-slider-tooltip {
+  left: 25px;
+  transform:unset !important;
+}
+
+.rc-slider-vertical .rc-slider-track,
+.rc-slider-vertical .rc-slider-rail,
+.rc-slider-vertical .rc-slider-step {
+  width: 7px !important;
+}

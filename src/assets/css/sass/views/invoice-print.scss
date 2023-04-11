@@ -1,0 +1,48 @@
+.invoice-react {
+  .invoice-contents {
+    background-color: $foreground-color;
+    height: 1200px;
+    max-width: 830px;
+    position: relative;
+  }
+}
+
+@media print {
+  body {
+    background: $foreground-color;
+    height: 100%;
+  }
+
+  main {
+    margin: 0 !important;
+  }
+
+  .navbar,
+  .sidebar,
+  .theme-colors {
+    display: none;
+  }
+
+  main .container-fluid .row:not(.invoice) {
+    display: none;
+  }
+
+  .invoice {
+    width: 100%;
+    max-width: 100%;
+
+    &.row {
+      margin: 0;
+    }
+
+    [class*='col'] {
+      padding: 0;
+    }
+
+    .invoice-contents {
+      width: 100%;
+      max-width: 100% !important;
+      height: 1370px !important;
+    }
+  }
+}

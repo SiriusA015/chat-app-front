@@ -1,0 +1,21 @@
+.react-tagsinput {
+  background-color: $input-background !important;
+  border: 1px solid $separator-color !important;
+  outline: initial !important;
+  box-shadow: initial !important;
+}
+
+.react-tagsinput--focused {
+  border: 1px solid rgba($theme-color-1, 0.6) !important;
+}
+
+.react-tagsinput-tag {
+  background: $theme-color-1 !important;
+  border-radius: 15px !important;
+  padding: 0px 10px !important;
+  margin-bottom: 0px !important;
+  display: inline-block !important;
+  font-size: 12px !important;
+  color: $foreground-color !important;
+  border: initial !important;
+}

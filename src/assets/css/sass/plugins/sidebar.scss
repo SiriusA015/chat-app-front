@@ -1,0 +1,816 @@
+/* 10.Menu*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: $navbar-height;
+  z-index: 4;
+  height: calc(100% - #{$navbar-height});
+  transition: border-radius $menu-collapse-time;
+
+  .scrollbar-container {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .main-menu {
+    width: $main-menu-width;
+    height: calc(100% - #{$navbar-height});
+    background: $foreground-color;
+    z-index: 3;
+    position: fixed;
+    transition: transform $menu-collapse-time;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: 0;
+
+    .scroll {
+      padding-right: unset;
+      margin-right: unset;
+      height: 100%;
+
+      .ps__thumb-y {
+        right: 0;
+      }
+    }
+
+    &.main-hidden {
+      transform: translateX(-$main-menu-width);
+    }
+
+    ul li {
+      position: relative;
+
+      span {
+        text-align: center;
+        padding: 0 10px;
+        line-height: 14px;
+      }
+
+      a {
+        height: $main-menu-item-height;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        border-bottom: 1px solid $separator-color-light;
+        color: $primary-color;
+        transition: color $menu-collapse-time;
+        transition: background $menu-collapse-time;
+
+        &:hover,
+        &:focus {
+          color: $theme-color-1;
+        }
+      }
+
+      i {
+        font-size: 32px;
+        line-height: 42px;
+      }
+
+      &.active a {
+        color: $theme-color-1;
+      }
+
+      &.active:after {
+        content: ' ';
+        background: $theme-color-1;
+        border-radius: 10px;
+        position: absolute;
+        width: 6px;
+        height: 90px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      &:last-of-type {
+        a {
+          border-bottom: initial;
+        }
+      }
+    }
+
+    @include respond-below(xl) {
+      width: $main-menu-width-lg;
+      height: calc(100% - #{$navbar-height-lg});
+    }
+
+    @include respond-below(lg) {
+      width: $main-menu-width-md;
+      height: calc(100% - #{$navbar-height-md});
+    }
+
+    @include respond-below(sm) {
+      width: $main-menu-width-xs;
+      height: calc(100% - #{$navbar-height-xs});
+
+      ul li i {
+        font-size: 28px;
+        line-height: 38px;
+      }
+
+      ul li a {
+        height: $main-menu-item-height-mobile;
+      }
+
+      ul li.active:after {
+        width: 3px;
+        height: 60px;
+      }
+    }
+  }
+
+  .sub-menu {
+    width: $sub-menu-width;
+    background: $foreground-color;
+    z-index: 2;
+    position: fixed;
+    left: $main-menu-width;
+    border-left: 1px solid $separator-color-light;
+    @include depth(2);
+    transition: transform $menu-collapse-time;
+    height: calc(100% - #{$navbar-height});
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0;
+
+    .scroll {
+      margin-right: unset;
+      padding-right: unset;
+      height: 100%;
+
+      .ps__thumb-y {
+        right: 0;
+      }
+
+      .scrollbar-container {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+
+    ul {
+      display: none;
+
+      li {
+        margin-bottom: 0;
+        margin-left: 30px;
+        position: relative;
+
+        a {
+          font-size: 13px;
+          display: block;
+          padding: 8px 0;
+          margin-bottom: 10px;
+        }
+
+        i {
+          font-size: 1.3em;
+          margin-right: 10px;
+          color: $secondary-color;
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        &.active i,
+        &.active a {
+          color: $theme-color-1;
+        }
+
+        &.active:after {
+          content: ' ';
+          background: $theme-color-1;
+          border-radius: 10px;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -16px;
+        }
+
+        span {
+          vertical-align: middle;
+          padding-top: 3px;
+          display: inline-block;
+        }
+      }
+
+      li.has-sub-item {
+        &.active:after {
+          content: ' ';
+          background: initial;
+        }
+      }
+
+      ul.third-level-menu {
+        display: block !important;
+        li {
+          a,
+          i {
+            color: $primary-color;
+          }
+          a:hover,
+          &.active i,
+          &.active a {
+            color: $theme-color-1;
+          }
+
+          &.active:after {
+            left: -22px;
+          }
+        }
+      }
+
+      .rotate-arrow-icon {
+        i {
+          transition: transform $animation-time-short;
+          transform: rotate(0);
+        }
+
+        &.collapsed {
+          i {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    @include respond-below(xl) {
+      left: $main-menu-width-lg;
+      width: $sub-menu-width-lg;
+      height: calc(100% - #{$navbar-height-lg});
+    }
+
+    @include respond-below(lg) {
+      left: $main-menu-width-md;
+      width: $sub-menu-width-md;
+      height: calc(100% - #{$navbar-height-md});
+    }
+
+    @include respond-below(sm) {
+      left: $main-menu-width-xs;
+      width: $sub-menu-width-xs;
+      height: calc(100% - #{$navbar-height-xs});
+    }
+  }
+
+  @include respond-below(xl) {
+    padding-top: $navbar-height-lg;
+    height: calc(100% - #{$navbar-height-lg});
+  }
+
+  @include respond-below(lg) {
+    padding-top: $navbar-height-md;
+    height: calc(100% - #{$navbar-height-md});
+  }
+
+  @include respond-below(sm) {
+    padding-top: $navbar-height-xs;
+    height: calc(100% - #{$navbar-height-xs});
+    @include depth(1);
+  }
+}
+
+.sub-hidden .menu-button,
+.menu-sub-hidden .menu-button {
+  .sub {
+    fill: $secondary-color;
+  }
+}
+
+.main-hidden .menu-button,
+.menu-hidden .menu-button {
+  .main,
+  .sub {
+    fill: $secondary-color;
+  }
+}
+
+//Menu Config Main Menu Sub Menu
+
+.sub-hidden .sub-menu,
+.menu-sub-hidden .sub-menu,
+.menu-hidden .sub-menu {
+  transform: translateX(-$sub-menu-width);
+
+  @include respond-below(xl) {
+    transform: translateX(-$sub-menu-width-lg);
+  }
+
+  @include respond-below(lg) {
+    transform: translateX(-$sub-menu-width-md);
+  }
+
+  @include respond-below(sm) {
+    transform: translateX(-$sub-menu-width-xs);
+  }
+}
+
+.main-hidden .main-menu,
+.menu-hidden .main-menu {
+  transform: translateX(-$main-menu-width);
+
+  @include respond-below(xl) {
+    transform: translateX(-$main-menu-width-lg);
+  }
+
+  @include respond-below(lg) {
+    transform: translateX(-$main-menu-width-md);
+  }
+
+  @include respond-below(sm) {
+    transform: translateX(-$main-menu-width-xs);
+  }
+}
+
+.main-hidden.sub-hidden .sub-menu,
+.menu-hidden .sub-menu {
+  transform: translateX(-$sub-menu-width - $main-menu-width);
+
+  @include respond-below(xl) {
+    transform: translateX(-$sub-menu-width-lg - $main-menu-width-lg);
+  }
+
+  @include respond-below(lg) {
+    transform: translateX(-$sub-menu-width-md - $main-menu-width-md);
+  }
+
+  @include respond-below(sm) {
+    transform: translateX(-$sub-menu-width-xs - $main-menu-width-xs);
+  }
+}
+
+//Mobile
+.menu-mobile {
+  .main-menu {
+    transform: translateX(-$main-menu-width-xs);
+  }
+
+  .sub-menu {
+    transform: translateX(-$sub-menu-width-xs - $main-menu-width-xs - 50);
+  }
+}
+
+//Show Temporary
+.main-show-temporary {
+  .main-menu {
+    transform: translateX(0);
+  }
+
+  .sub-menu {
+    transform: translateX(-$sub-menu-width);
+  }
+
+  @include respond-below(xl) {
+    .main-menu {
+      transform: translateX(0);
+    }
+
+    .sub-menu {
+      transform: translateX(-$sub-menu-width-lg);
+    }
+  }
+
+  @include respond-below(lg) {
+    .main-menu {
+      transform: translateX(0);
+    }
+
+    .sub-menu {
+      transform: translateX(-$sub-menu-width-md);
+    }
+  }
+
+  @include respond-below(sm) {
+    .sub-menu {
+      transform: translateX(-$sub-menu-width-xs);
+    }
+  }
+}
+
+.sub-show-temporary,
+.menu-mobile.sub-show-temporary {
+  .sub-menu {
+    transform: translateX(0);
+  }
+}
+
+//Menu Config Main
+
+.sub-hidden main,
+.menu-sub-hidden main,
+.menu-hidden main {
+  margin-left: $main-menu-width + $main-margin;
+}
+
+.main-hidden main,
+.menu-hidden main {
+  margin-left: $main-margin;
+}
+
+@include respond-below(xl) {
+  .sub-hidden main,
+  .menu-sub-hidden main,
+  .menu-hidden main {
+    margin-left: $main-menu-width-lg + $main-margin-lg;
+  }
+
+  .main-hidden main,
+  .menu-hidden main {
+    margin-left: $main-margin-lg;
+  }
+}
+
+@include respond-below(lg) {
+  .sub-hidden main,
+  .menu-sub-hidden main,
+  .menu-hidden main {
+    margin-left: $main-menu-width-md + $main-margin-md;
+  }
+
+  .main-hidden main,
+  .menu-hidden main {
+    margin-left: $main-margin-md;
+  }
+}
+
+.rtl {
+  .sidebar {
+    right: 0;
+    left: initial;
+
+    .main-menu {
+      left: initial;
+      right: 0;
+
+      ul li {
+        position: relative;
+
+        &.active:after {
+          content: ' ';
+          left: initial;
+          right: 0;
+
+          @include respond-below(sm) {
+            right: 2px;
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      left: initial;
+      right: $main-menu-width;
+      border-right: 1px solid $separator-color-light;
+      @include depth(2);
+
+      ul {
+        li {
+          margin-left: initial;
+          margin-right: 30px;
+
+          i {
+            margin-right: initial;
+            margin-left: 10px;
+          }
+
+          &.active:after {
+            left: initial;
+            right: -16px;
+          }
+        }
+      }
+
+      ul.third-level-menu {
+        li {
+          &.active:after {
+            left: initial;
+            right: -22px;
+          }
+        }
+      }
+
+      @include respond-below(xl) {
+        left: initial;
+        right: $main-menu-width-lg;
+      }
+
+      @include respond-below(lg) {
+        left: initial;
+        right: $main-menu-width-md;
+      }
+
+      @include respond-below(sm) {
+        left: initial;
+        right: $main-menu-width-xs;
+      }
+    }
+  }
+  .sidebar .sub-menu .scroll .ps__thumb-y,
+  .sidebar .main-menu .scroll .ps__thumb-y {
+    right: 0;
+  }
+
+  //Menu Config Main Menu Sub Menu
+  .sub-hidden .sub-menu,
+  .menu-sub-hidden .sub-menu,
+  .menu-hidden .sub-menu {
+    transform: translateX($sub-menu-width);
+
+    @include respond-below(xl) {
+      transform: translateX($sub-menu-width-lg);
+    }
+
+    @include respond-below(lg) {
+      transform: translateX($sub-menu-width-md);
+    }
+
+    @include respond-below(sm) {
+      transform: translateX($sub-menu-width-xs);
+    }
+  }
+
+  .main-hidden .main-menu,
+  .menu-hidden .main-menu {
+    transform: translateX($main-menu-width);
+
+    @include respond-below(xl) {
+      transform: translateX($main-menu-width-lg);
+    }
+
+    @include respond-below(lg) {
+      transform: translateX($main-menu-width-md);
+    }
+
+    @include respond-below(sm) {
+      transform: translateX($main-menu-width-xs);
+    }
+  }
+
+  .main-hidden.sub-hidden .sub-menu,
+  .menu-hidden .sub-menu {
+    transform: translateX($sub-menu-width + $main-menu-width);
+
+    @include respond-below(xl) {
+      transform: translateX($sub-menu-width-lg + $main-menu-width-lg);
+    }
+
+    @include respond-below(lg) {
+      transform: translateX($sub-menu-width-md + $main-menu-width-md);
+    }
+
+    @include respond-below(sm) {
+      transform: translateX($sub-menu-width-xs + $main-menu-width-xs);
+    }
+  }
+
+  .menu-main-hidden {
+    .main-menu {
+      width: 0;
+    }
+
+    .sub-menu {
+      right: 0;
+    }
+  }
+
+  //Mobile
+  .menu-mobile {
+    .main-menu {
+      transform: translateX($main-menu-width-xs);
+    }
+
+    .sub-menu {
+      transform: translateX($sub-menu-width-xs + $main-menu-width-xs + 50);
+    }
+  }
+
+  //Show Temporary
+  .main-show-temporary {
+    .main-menu {
+      transform: translateX(0);
+    }
+
+    .sub-menu {
+      transform: translateX($sub-menu-width);
+    }
+
+    @include respond-below(xl) {
+      .main-menu {
+        transform: translateX(0);
+      }
+
+      .sub-menu {
+        transform: translateX($sub-menu-width-lg);
+      }
+    }
+
+    @include respond-below(lg) {
+      .main-menu {
+        transform: translateX(0);
+      }
+
+      .sub-menu {
+        transform: translateX($sub-menu-width-md);
+      }
+    }
+
+    @include respond-below(sm) {
+      .sub-menu {
+        transform: translateX($sub-menu-width-xs);
+      }
+    }
+  }
+
+  .sub-show-temporary,
+  .menu-mobile.sub-show-temporary,
+  .menu-main-hidden.menu-mobile.main-show-temporary {
+    .sub-menu {
+      transform: translateX(0);
+    }
+  }
+
+  //Menu Config Main
+  .sub-hidden main,
+  .menu-sub-hidden main,
+  .menu-hidden main {
+    margin-right: $main-menu-width + $main-margin;
+  }
+
+  .main-hidden main,
+  .menu-hidden main {
+    margin-right: $main-margin;
+  }
+
+  .menu-main-hidden {
+    main {
+      margin-right: $main-margin + $sub-menu-width;
+    }
+    &.menu-hidden {
+      main {
+        margin-right: $main-margin;
+      }
+    }
+  }
+
+  @include respond-below(xl) {
+    .sub-hidden main,
+    .menu-sub-hidden main,
+    .menu-hidden main {
+      margin-right: $main-menu-width-lg + $main-margin-lg;
+    }
+
+    .main-hidden main,
+    .menu-hidden main {
+      margin-right: $main-margin-lg;
+    }
+
+    .menu-main-hidden {
+      main {
+        margin-right: $main-margin-lg + $sub-menu-width-lg;
+      }
+      &.menu-hidden {
+        main {
+          margin-right: $main-margin-lg;
+        }
+      }
+    }
+  }
+
+  @include respond-below(lg) {
+    .sub-hidden main,
+    .menu-sub-hidden main,
+    .menu-hidden main {
+      margin-right: $main-menu-width-md + $main-margin-md;
+    }
+
+    .main-hidden main,
+    .menu-hidden main {
+      margin-right: $main-margin-md;
+    }
+
+    .menu-main-hidden {
+      main {
+        margin-right: $main-margin-md + $sub-menu-width-md;
+      }
+      &.menu-hidden {
+        main {
+          margin-right: $main-margin-md;
+        }
+      }
+    }
+  }
+
+  &.rounded {
+    .app-menu {
+      border-top-right-radius: $border-radius-rounded;
+      border-bottom-right-radius: $border-radius-rounded;
+    }
+
+    .sub-menu {
+      border-radius: $border-radius-rounded 0 0 $border-radius-rounded;
+    }
+
+    .sub-hidden .main-menu,
+    .menu-sub-hidden .main-menu {
+      border-radius: $border-radius-rounded 0 0 $border-radius-rounded;
+    }
+
+    .sub-show-temporary .main-menu {
+      border-radius: initial;
+    }
+  }
+}
+
+.rounded {
+  .sub-menu {
+    border-radius: 0 $border-radius-rounded $border-radius-rounded 0;
+  }
+
+  .sub-hidden .main-menu,
+  .menu-sub-hidden .main-menu {
+    border-radius: 0 $border-radius-rounded $border-radius-rounded 0;
+  }
+
+  .sub-show-temporary .main-menu {
+    border-radius: initial;
+  }
+}
+
+#app-container {
+  &.sub-hidden .footer-content,
+  &.menu-sub-hidden .footer-content,
+  &.menu-hidden .footer-content {
+    margin-left: $main-menu-width + $main-margin;
+  }
+
+  &.main-hidden .footer-content,
+  &.menu-hidden .footer-content {
+    margin-left: $main-margin;
+  }
+
+  &.menu-main-hidden {
+    .footer-content {
+      margin-left: $main-margin + $sub-menu-width;
+    }
+    &.menu-hidden {
+      .footer-content {
+        margin-left: $main-margin;
+      }
+    }
+  }
+
+  @include respond-below(xl) {
+    &.sub-hidden .footer-content,
+    &.menu-sub-hidden .footer-content,
+    &.menu-hidden .footer-content {
+      margin-left: $main-menu-width-lg + $main-margin-lg;
+    }
+
+    &.main-hidden .footer-content,
+    &.menu-hidden .footer-content {
+      margin-left: $main-margin-lg;
+    }
+
+    &.menu-main-hidden {
+      .footer-content {
+        margin-left: $main-margin-lg + $sub-menu-width-lg;
+      }
+      &.menu-hidden {
+        .footer-content {
+          margin-left: $main-margin-lg;
+        }
+      }
+    }
+  }
+
+  @include respond-below(lg) {
+    &.sub-hidden .footer-content,
+    &.menu-sub-hidden .footer-content,
+    &.menu-hidden .footer-content {
+      margin-left: $main-menu-width-md + $main-margin-md;
+    }
+
+    &.main-hidden .footer-content,
+    &.menu-hidden .footer-content {
+      margin-left: $main-margin-md;
+    }
+
+    &.menu-main-hidden {
+      .footer-content {
+        margin-left: $main-margin-md + $sub-menu-width-md;
+      }
+      &.menu-hidden {
+        .footer-content {
+          margin-left: $main-margin-md;
+        }
+      }
+    }
+  }
+}
